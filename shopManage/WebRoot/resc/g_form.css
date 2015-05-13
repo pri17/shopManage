@@ -1,0 +1,93 @@
+@CHARSET "UTF-8";
+
+.changeForm{
+	position:absolute;
+	left:338px;
+	border:1px solid #ccc;
+	background-color:white;
+	width:799px;
+	z-index:99;
+	padding:20px 40px;
+	height:402px;
+}
+
+.changeForm p{
+	text-align:center;
+}
+
+.changeForm table{
+	width:800px;
+	text-align:center;
+	border-collapse:collapse;
+	margin:20px 0;
+}
+.changeForm table td{
+	border:1px solid #ccc;
+	padding:8px 0;
+}
+
+.changeForm table th{
+	border:1px solid #ccc;
+	padding:8px 0;
+}
+
+.changeForm h2{
+	text-align:center;
+	padding:8px 0;
+}
+
+.changeForm a{
+	float:right;
+}
+
+.prev{
+	position:absolute;
+	left:40px;
+	top:40px;
+	margin:-40px;
+	width:70px;
+	height:442px;
+	z-index:999;
+	cursor:pointer;
+}
+.prev-btn{
+	position: absolute;
+  	left: 50%;
+  	top: 50%;
+  	margin: -30px 0 0 -18px;
+  	width: 40px;
+  	height: 72px;
+	background:url(slider_btn_icon.png) no-repeat 0 -87px;
+}
+.prev-btn-hover{
+	background-position:-45px -87px;
+}
+.btn-hover{
+	background-color:#e5e5e5;
+}
+
+.next{
+	position:absolute;
+	left:849px;
+	top:40px;
+	margin:-40px;
+	width:70px;
+	height:442px;
+	z-index:999;
+	cursor:pointer;
+}
+.next-btn{
+	position: absolute;
+  	left: 50%;
+  	top: 50%;
+  	margin: -30px 0 0 -18px;
+  	width: 40px;
+  	height: 72px;
+	background:url(slider_btn_icon.png) no-repeat 0 0;
+}
+.next-btn-hover{
+	background-position:-45px 0;
+}
+#highchart{
+	width:659px;
+}

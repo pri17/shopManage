@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" 
+	destroy-method="close"
+		p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://localhost:3307/shopinf"
+		p:user="root"
+		p:password="12345"
+		p:maxPoolSize="200"
+		p:minPoolSize="2"
+		p:initialPoolSize="2"
+		p:maxIdleTime="20"/>
+	<!-- 定义Hibernate的SessionFactory，并依赖注入数据源，注入上面定义的dataSource -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSource">
+		<!-- annotatedClasses属性用于列出全部持久化类 -->
+		<property name="annotatedClasses">
+			<list>
+				<!-- 以下用来列出Hibernate的持久化类 -->
+				<value>org.spsystem.domain.Goods</value>
+				<value>org.spsystem.domain.Purchase</value>
+				<value>org.spsystem.domain.Sale</value>
+				<value>org.spsystem.domain.Shop</value>
+				<value>org.spsystem.domain.Staff</value>
+				<value>org.spsystem.domain.Type</value>
+			</list>
+		</property>
+		<!-- 定义Hibernate的SessionFactory的属性 -->
+		<property name="hibernateProperties">
+			<!-- 指定数据库方言、是否自动建表、是否生成SQL语句等 	-->
+			<value>
+			hibernate.dialect=org.hibernate.dialect.MySQLDialect
+			hibernate.hbm2ddl.auto=update
+			hibernate.show_sql=true
+			hibernate.format_sql=true
+			#开启二级缓存
+			hibernate.cache.use_second_level_cache=true
+			#设置二级缓存的提供者
+			hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.EhCacheRegionFactory
+			</value>
+		</property>
+	</bean>
+	
+<!-- 配置DAO组件的模板 -->
+<bean id="daoTemplate" abstract="true" lazy-init="true"
+	p:sessionFactory-ref="sessionFactory"/>
+
+<bean id="goodsDao"
+	class="org.spsystem.dao.impl.GoodsDaoHibernate"
+	parent="daoTemplate"/>
+
+<bean id="purchaseDao"
+	class="org.spsystem.dao.impl.PurchaseDaoHibernate"
+	parent="daoTemplate"/>
+
+<bean id="saleDao"
+	class="org.spsystem.dao.impl.SaleDaoHibernate"
+	parent="daoTemplate"/>
+
+<bean id="shopDao"
+	class="org.spsystem.dao.impl.ShopDaoHibernate"
+	parent="daoTemplate"/>
+
+<bean id="staffDao"
+	class="org.spsystem.dao.impl.StaffDaoHibernate"
+	parent="daoTemplate"/>
+
+<bean id="typeDao"
+	class="org.spsystem.dao.impl.TypeDaoHibernate"
+	parent="daoTemplate"/>
+</beans>
