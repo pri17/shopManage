@@ -76,4 +76,18 @@ public interface GoodsDao extends BaseDao<Goods>{
 	 * @return 该商店所有商品的售货信息（销量、收入、售货单数目）
 	 */
 	List<Object[]> findSaleInfByName(Shop shop, String goodsName);
+	//////////////////////////////////////
+	/////////////////////////////////////
+	/**
+	 * 通过商品id查找商品信息
+	 * @param id id
+	 * @return 该商品的信息
+	 */
+	List<Goods> findGoodsByid(int id);
+	/**
+	 * 通过种类名模糊查找商品信息
+	 * @param String type_name
+	 * @return 该商品的信息
+	 */
+	List<Goods> findGoodsByType(String type_name);
 }

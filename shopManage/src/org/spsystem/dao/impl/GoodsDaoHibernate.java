@@ -11,8 +11,9 @@ import org.spsystem.vo.GoodsInfBean;
 public class GoodsDaoHibernate extends BaseDaoHibernate<Goods> implements GoodsDao{
 
 	@Override
+	//modified
 	public List<Goods> findByGoodsName(String goodsName) {
-		return find("from Goods as a where a.name ='"+goodsName+"'");
+		return find("from Goods as a where a.name like '%"+goodsName+"%'");
 	}
 
 	@Override
@@ -53,5 +54,17 @@ public class GoodsDaoHibernate extends BaseDaoHibernate<Goods> implements GoodsD
 	@Override
 	public List<Object[]> findSaleInfByName(Shop shop, String goodsName) {
 		return select("select a.goods.id, sum(a.num), sum(a.price), count(*) from Sale as a where a.shop=?0 and a.goods.name like '%"+goodsName+"%'group by a.goods order by a.goods.id", shop);
+	}
+
+	@Override
+	public List<Goods> findGoodsByid(int id) {
+		return find("from Goods where id="+id);
+	}
+
+	@Override
+	public List<Goods> findGoodsByType(String type_name) {
+		return find("select a.goods.id,a.goods.name,b.type.name "
+				+ "from Goods as a,Type as b where b.type.id=a.goods.type.id "
+				+ "and b.type.name like '%"+type_name+"%'");
 	}
 }
