@@ -1,0 +1,719 @@
+.reco-slides .mt-slider-sheet {
+	position:absolute;
+	overflow:hidden;
+	_zoom:1
+}
+.reco-slides__tips,.reco-slides__switch {
+	display:block!important;
+	position:absolute;
+	top:0;
+	left:0
+}
+.reco-slides__roll {
+	position:absolute;
+	z-index:2;
+	cursor:pointer
+}
+.reco-slides__roll--blacksquare {
+	width:42px;
+	height:50px;
+	background:url(http://s0.meituan.net/www/css/i/sp-slide.v52736038.png) no-repeat -248px 0
+}
+.reco-slides__roll--blacksquare--previous {
+	background-position:-205px 0
+}
+.reco-slides__roll--greyrect {
+	width:28px;
+	height:72px;
+	background:url(http://s0.meituan.net/www/css/i/sp-slide.v52736038.png) no-repeat -327px 0
+}
+.reco-slides__roll--greyrect--previous {
+	background-position:-298px 0
+}
+.reco-slides__roll:hover {
+	opacity:1!important;
+	_filter:alpha(opacity=90)!important
+}
+.reco-slides__roll--greyrect:hover {
+	background-position:-327px -73px
+}
+.reco-slides__roll--greyrect--previous:hover {
+	background-position:-298px -73px
+}
+.reco-slides__roll--gradientrect {
+	width:69px;
+	height:250px;
+	background:url(http://s0.meituan.net/www/css/i/sp-poi-24.v675e88dd.png) no-repeat -70px 0;
+	_background:0;
+	zoom:1
+}
+.reco-slides__roll--gradientrect--previous {
+	background-position:0 0
+}
+.reco-slides__roll--gradientrect i {
+	position:absolute;
+	top:115px;
+	width:23px;
+	height:32px;
+	background:url(http://s0.meituan.net/www/css/i/sp-poi-24.v675e88dd.png) no-repeat -299px 0;
+	_width:42px;
+	_height:50px;
+	_background:url(http://s0.meituan.net/www/css/i/sp-slide.v52736038.png) no-repeat -248px 0
+}
+.reco-slides__roll--gradientrect--previous i {
+	background-position:-278px 0;
+	left:10px;
+	_background-position:-205px 0
+}
+.reco-slides__roll--gradientrect--next i {
+	right:10px
+}
+
+
+
+
+
+#site-mast {
+	background:#FFF
+}
+.site-fs {
+	margin:0 auto;
+	padding-left:215px;
+	width:764px;
+	height:402px;
+	background:#FFF;
+	border-right:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+	box-shadow:0 2px 0 0 #ededed
+}
+.site-fs__cell {
+	margin:0 15px;
+	padding:15px 0;
+	border-bottom:1px solid #ededed;
+	zoom:1
+}
+.site-fs__cell-small {
+	padding:12px 0
+}
+.site-fs__cell .label {
+	position:relative;
+	padding-left:20px;
+	line-height:24px;
+	color:#999;
+	font-size:12px;
+	font-weight:normal;
+	*zoom:1
+}
+.site-fs__cell-small .label {
+	float:left;
+	margin-right:20px
+}
+.site-fs__cell--slider {
+	padding-bottom:0
+}
+.site-fs__cell .label i {
+	position:absolute;
+	left:0;
+	top:0;
+	*top:-2px;
+	_top:0;
+	width:14px;
+	height:18px;
+	background:url(http://s1.meituan.net/www/css/i/sp-header-new.va76f943b.png) no-repeat
+}
+.site-fs__cell--geo .label i {
+	background-position:-83px -58px
+}
+.site-fs__cell--hot .label i {
+	background-position:-115px -58px
+}
+.site-fs__cell--area .label i {
+	background-position:-131px -58px
+}
+.filter-strip {
+	margin-left:20px;
+	height:24px;
+	overflow:hidden;
+	font-size:12px;
+	line-height:24px
+}
+.filter-strip__list li {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	margin-right:20px;
+	vertical-align:top
+}
+.filter-strip__list a {
+	color:#666
+}
+.filter-strip__list .hot {
+	color:#f76120
+}
+.filter-strip__all {
+	float:right;
+	position:relative;
+	border:1px solid #ededed;
+	margin:1px 0;
+	padding:0 13px 0 5px;
+	color:#666;
+	line-height:20px
+}
+.filter-strip__all .tri {
+	border-top:3px solid #666;
+	top:9px;
+	right:3px
+}
+.filter-strip__all:hover,.filter-strip__list a:hover {
+	color:#0bb;
+	text-decoration:none
+}
+.filter-strip__all:hover .tri {
+	border-top-color:#0bb
+}
+.site-fs__cell--geowrap {
+	position:relative;
+	z-index:1
+}
+.site-fs__cell--geowrap .site-fs__cell--geo {
+	position:absolute;
+	top:-1px;
+	left:0;
+	width:734px;
+	margin:0 8px;
+	padding-left:6px;
+	padding-right:6px;
+	background:#FFF;
+	border:1px solid #ededed;
+	box-shadow:0 1px #ededed;
+	z-index:1
+}
+.site-fs__cell--geowrap .filter-strip {
+	padding-left:67px;
+	overflow:visible;
+	height:auto
+}
+.reco-sliders-w {
+	position:relative;
+	padding-right:1px;
+	overflow:visible!important;
+	zoom:1
+}
+.reco-sliders-w .left {
+	position:relative;
+	float:left;
+	width:367px
+}
+.reco-sliders-w .right {
+	position:relative;
+	float:right;
+	width:366px
+}
+.reco-sliders-w .link {
+	display:block
+}
+.reco-sliders-w .link:hover {
+	text-decoration:none
+}
+.reco-sliders-w .discount {
+	position:absolute;
+	right:10px;
+	top:0;
+	width:28px;
+	height:37px;
+	padding:13px 22px 0 12px;
+	color:#FFF;
+	font-weight:bold;
+	font-family:Arial;
+	font-size:18px;
+	text-align:center;
+	background:url(http://s0.meituan.net/www/css/i/sp-icons-24.v93f4adf7.png) 0 -20px no-repeat;
+	_background:url(http://s0.meituan.net/www/css/i/sp-icons.vbfce69f2.png) 0 -20px no-repeat;
+	z-index:2
+}
+.reco-sliders-w .discount-big {
+	width:62px;
+	padding:8px 0 5px;
+	font-size:24px
+}
+.reco-sliders-w .img {
+	vertical-align:top
+}
+.reco-sliders-w .title {
+	position:relative;
+	float:left;
+	width:240px;
+	height:40px;
+	padding:5px 10px;
+	background-color:#f6f6f6
+}
+.reco-sliders-w .title--banner {
+	width:346px
+}
+.reco-sliders-w .left .title--banner {
+	border-right:1px solid #d6d6d6
+}
+.reco-sliders-w .one-pic-title {
+	width:610px
+}
+.reco-sliders-w .desc,.reco-sliders-w .xtitle,.reco-sliders-w .price {
+	position:relative;
+	width:245px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap
+}
+.reco-sliders-w .desc {
+	font-size:12px;
+	color:#999
+}
+.reco-sliders-w .xtitle {
+	color:#666
+}
+.reco-sliders-w .price {
+	position:relative;
+	float:right;
+	width:100px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	color:#f76120;
+	font-weight:bold;
+	font-size:24px;
+	font-family:arial
+}
+.reco-sliders-w .left .price {
+	border-right:1px solid #d6d6d6
+}
+.reco-sliders-w .head {
+	position:relative;
+	padding:0 0 5px 20px
+}
+.reco-sliders-w .head .icon {
+	position:absolute;
+	top:2px;
+	left:0;
+	width:15px;
+	height:15px;
+	background:url(http://s1.meituan.net/www/css/i/sp-header-new.va76f943b.png) no-repeat -97px -62px;
+	*display:inline;
+	zoom:1
+}
+.reco-sliders-w .head h2 {
+	margin-bottom:8px;
+	line-height:20px;
+	font-size:14px;
+	color:#666
+}
+.reco-sliders-w .head .trigger-container {
+	width:auto;
+	top:8px;
+	right:0;
+	left:auto;
+	background:#FFF
+}
+.reco-sliders-w .split-line {
+	position:absolute;
+	right:-10px;
+	top:0;
+	width:10px;
+	height:50px;
+	background:url(http://s0.meituan.net/www/css/i/sp-slide.v52736038.png) no-repeat -156px -5px
+}
+.reco-sliders-w .split-side {
+	position:absolute;
+	bottom:-5px;
+	width:8px;
+	height:60px;
+	background:url(http://s0.meituan.net/www/css/i/sp-slide.v52736038.png) no-repeat
+}
+.reco-sliders-w .split-side--left {
+	left:-8px;
+	background-position:-144px 0
+}
+.reco-sliders-w .split-side--right {
+	right:-8px;
+	background-position:-136px 0
+}
+.reco-sliders-w .slide__item--banner .split-side--right {
+	background-position:-128px 0
+}
+.reco-sliders-w .mt-slider-sheet-container {
+	overflow:visible!important;
+	height:270px!important
+}
+.reco-sliders-w .mt-slider-sheet {
+	width:100%
+}
+.reco-sliders-w .head .mt-slider-trigger,.reco-sliders-w .head .mt-slider-current-trigger {
+	margin-left:7px;
+	background:url(../Design/dot.png) no-repeat -14px -77px
+}
+.reco-sliders-w .head .mt-slider-current-trigger {
+	background-position:0 -77px
+}
+.reco-sliders-w .pre-next .mt-slider-previous,.reco-sliders-w .pre-next .mt-slider-next {
+	position:absolute;
+	right:-10px;
+	top:170px;
+	width:42px;
+	height:50px;
+	background:url(../Design/dot.png) no-repeat -248px 0;
+	z-index:2;
+	cursor:pointer
+}
+.reco-sliders-w .pre-next .mt-slider-previous {
+	left:-10px;
+	right:auto;
+	background-position:-206px 0
+}
+.site-ms {
+	margin:0 auto;
+	padding:20px 0 40px;
+	width:980px;
+	overflow:hidden;
+	_zoom:1
+}
+.mall-branding {
+	position:relative;
+	padding:0 0 17px 30px;
+	clear:both;
+	font-size:18px;
+	color:#666;
+	_zoom:1
+}
+.mall-branding i {
+	position:absolute;
+	top:0;
+	*top:-4px;
+	_top:0;
+	left:0;
+	width:23px;
+	height:25px;
+	background:url(http://s1.meituan.net/www/css/i/sp-icon-cates.ve89ef99c.png) no-repeat -111px -59px
+}
+.pg-nav .reco-slides-w {
+	height:303px
+}
+.qrcode-sprite,.stick-qrcode .index-xiaomei,.stick-qrcode .stick-qrcode-index,.stick-qrcode .stick-qrcode-category,.stick-qrcode .stick-qrcode-deal,.stick-qrcode .stick-qrcode-search,.block-download,.block-download .block-qrcode-growth,.block-download .block-qrcode-lottery,.block-download .block-qrcode-cartbuy,.block-download .block-qrcode-orderbuy,.qrcode-dealbuy,.stick-left .left-xiaomei,.stick-left .left-qrcode-orders,.stick-left .left-qrcode-refund,.stick-left .left-qrcode-lottery,.stick-left .left-qrcode-collection,.stick-left .left-qrcode-rate,.stick-left .left-qrcode-growth,.stick-left .left-qrcode-credit,.stick-left .left-qrcode-balance,.stick-left .left-qrcode-coupon,.stick-left .left-qrcode-account,.stick-left .left-growth,.qrcode-dialog .qrcode-dialog-coupon,.qrcode-dialog .qrcode-dialog-message,.around-position-qrcode {
+	background:url(http://s0.meituan.net/www/css/si/qrcode.v4ab9bce1.png) no-repeat
+}
+
+.block-download {
+	position:relative;
+	height:174px;
+	margin:20px 0;
+	background-position:0 0
+}
+.block-download .block__qrcode {
+	position:absolute;
+	width:100px;
+	height:100px;
+	top:36px;
+	left:159px
+}
+.block-download .download__btn {
+	position:absolute;
+	height:36px;
+	top:100px
+}
+.block-download .download__btn-iphone {
+	width:150px;
+	left:299px
+}
+.block-download .download__btn-android {
+	width:160px;
+	left:460px
+}
+.block-download .download__tip {
+	position:absolute;
+	bottom:80px;
+	right:20px;
+	width:360px;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+	color:#555
+}
+.block-download .download__tip strong {
+	color:#ff8900
+}
+.block-download .download__tip .extra {
+	color:#dcdcdc;
+	font-size:16px
+}
+.block-download .block-qrcode-growth {
+	background-position:0 -175px
+}
+.block-download .block-qrcode-lottery {
+	background-position:0 -644px
+}
+.block-download .block-qrcode-cartbuy {
+	background-position:0 -848px
+}
+.block-download .block-qrcode-orderbuy {
+	background-position:0 -746px
+}
+.qrcode-dealbuy {
+	position:absolute;
+	top:0;
+	right:2px;
+	width:147px;
+	height:111px;
+	background-position:0 -531px
+}
+.stick-left {
+	position:fixed;
+	_position:absolute;
+	left:50%;
+	margin-left:-619px;
+	z-index:40
+}
+.stick-left .stick-qrcode__pos {
+	position:absolute;
+	top:150px;
+	left:26px;
+	width:74px;
+	height:74px
+}
+.stick-left .left-xiaomei {
+	position:relative;
+	display:inline-block;
+	width:119px;
+	height:294px;
+	vertical-align:top;
+	outline:0;
+	background-position:0 -1207px
+}
+.stick-left .left-xiaomei .close {
+	position:absolute;
+	top:132px;
+	right:0;
+	width:20px;
+	height:20px
+}
+.stick-left a {
+	text-decoration:none
+}
+.stick-left .title {
+	position:absolute;
+	width:120px;
+	top:12px;
+	left:2px;
+	color:#666;
+	text-align:center
+}
+.stick-left .title strong {
+	color:#f76120
+}
+.stick-left .left-qrcode-orders {
+	background-position:0 -2135px
+}
+.stick-left .left-qrcode-refund {
+	background-position:0 -2363px
+}
+.stick-left .left-qrcode-lottery {
+	background-position:0 -1679px
+}
+.stick-left .left-qrcode-collection {
+	background-position:0 -1755px
+}
+.stick-left .left-qrcode-rate {
+	background-position:0 -2211px
+}
+.stick-left .left-qrcode-growth {
+	position:absolute;
+	top:60px;
+	left:17px;
+	width:74px;
+	height:74px;
+	background-position:0 -1907px
+}
+.stick-left .left-qrcode-credit {
+	background-position:0 -1831px
+}
+.stick-left .left-qrcode-balance {
+	background-position:0 -2287px
+}
+.stick-left .left-qrcode-coupon {
+	background-position:0 -2591px
+}
+.stick-left .left-qrcode-account {
+	background-position:0 -2059px
+}
+.stick-left .left-growth {
+	position:relative;
+	display:inline-block;
+	width:110px;
+	height:174px;
+	vertical-align:top;
+	outline:0;
+	background-position:0 -1503px
+}
+.stick-left .left-growth .close {
+	position:absolute;
+	top:132px;
+	right:0;
+	width:20px;
+	height:20px
+}
+.qrcode-dialog {
+	float:right;
+	height:200px;
+	padding:10px 10px 10px 0
+}
+.qrcode-dialog h4 {
+	font-size:18px;
+	color:#666
+}
+.qrcode-dialog .title__large {
+	font-size:24px
+}
+.qrcode-dialog .title__large strong {
+	color:#f76120
+}
+.qrcode-dialog .download {
+	position:relative;
+	margin-top:18px
+}
+.qrcode-dialog .link {
+	margin-left:120px
+}
+.qrcode-dialog .link .btn {
+	display:block;
+	margin-top:13px
+}
+.qrcode-dialog .qrcode {
+	position:absolute;
+	right:180px
+}
+.qrcode-dialog .qrcode .down__qrcode {
+	display:block;
+	width:100px;
+	height:100px
+}
+.qrcode-dialog .qrcode-dialog-coupon {
+	background-position:0 -429px
+}
+.qrcode-dialog .qrcode-dialog-message {
+	background-position:0 -2667px
+}
+.around-position-qrcode {
+	position:absolute;
+	top:20px;
+	right:20px;
+	width:74px;
+	height:74px;
+	background-position:0 -2515px
+}
+.yui3-widget-hidden {
+	display:none
+}
+.yui3-widget-content {
+	overflow:hidden
+}
+.yui3-widget-content-expanded {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	height:100%
+}
+.yui3-widget-tmp-forcesize {
+	overflow:hidden!important
+}
+#yui3-css-stamp.skin-sam-widget-base {
+	display:none
+}
+#yui3-css-stamp.skin-sam-w-slider {
+	display:none
+}
+.mt-slider {
+	position:relative
+}
+.mt-slider-content {
+	overflow:hidden
+}
+.mt-slider-sheet-container {
+	position:relative;
+	overflow:hidden;
+	height:400px
+}
+.mt-slider-sheet {
+	position:absolute;
+	top:0;
+	left:0;
+	opacity: 0;
+	display: none
+}
+
+.mt-slider-current-sheet {
+	position:absolute;
+	top:0;
+	opacity: 1;
+	left:0;
+	display:block;
+	left:0
+}
+.mt-slider-sheet-hide
+{
+    opacity : 0;
+    display : none
+}
+.mt-slider-sheet-focus
+{
+    opacity : 0.6;
+    display : block
+}
+.mt-slider-sheet-focus1
+{
+    opacity : 1;
+    display : block
+}
+.mt-slider-next,.mt-slider-previous {
+	left:0;
+	top:0;
+	background:url(http://s1.meituan.net/fecore/w-slider/assets/skins/img/left.png) no-repeat;
+	-webkit-transition:opacity .2s ease-out;
+	-moz-transition:opacity .2s ease-out;
+	-o-transition:opacity .2s ease-out;
+	transition:opacity .2s ease-out
+}
+.mt-slider-next {
+	left:auto;
+	right:0;
+	top:0;
+	background:url(http://s1.meituan.net/fecore/w-slider/assets/skins/img/right.png) no-repeat
+}
+.mt-slider-previous:hover,.mt-slider-next:hover {
+	opacity:1!important;
+	_filter:alpha(opacity=90)!important;
+	cursor:pointer
+}
+.mt-slider-trigger-container {
+	position:absolute;
+	bottom:-20px;
+	left:0;
+	width:100%;
+	font-size:0;
+	text-align:center;
+	background:#cedcdd;
+	height:20px;
+	zoom:1
+}
+.mt-slider-trigger {
+	position:relative;
+	top:0;
+	display:inline-block;
+	margin-top:5px;
+	margin-left:10px;
+	height:11px;
+	width:11px;
+	background:url(http://s0.meituan.net/fecore/w-slider/assets/skins/img/slider-dot.png) no-repeat;
+	cursor:pointer;
+	*display:inline;
+	zoom:1
+}
+.mt-slider-current-trigger {
+	background-position:-12px 0
+}

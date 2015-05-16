@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+<constant name="struts.custom.i18n.resources" value="resource"></constant>
+	<constant name="struts.i18n.encoding" value="gbk"></constant>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+		<global-results>
+			<result name="login">login.jsp</result>
+		</global-results>
+	
+        <action name="viewPurchase" class="org.spsystem.action.ViewPurchaseAction">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action>
+        
+         <action name="viewPurchaseOrderbyTime" class="org.spsystem.action.ViewPurchaseAction" method="timeOrder">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action>
+        
+        <action name="viewPurchaseOrderbyNum" class="org.spsystem.action.ViewPurchaseAction" method="numOrder">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action>
+        
+         <action name="viewGoodsPurchases" class="org.spsystem.action.ViewPurchaseAction" method="viewGoodsPurchases">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action>
+        
+         <action name="p_findByGoodsName" class="org.spsystem.action.ViewPurchaseAction" method="findByGoodsName">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action>
+        
+         <action name="p_findByGoodsID" class="org.spsystem.action.ViewPurchaseAction" method="findByGoodsId">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action>
+        
+         <action name="p_findByStaff" class="org.spsystem.action.ViewPurchaseAction" method="findByStaff">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action>
+        
+       <action name="viewPurchaseChosenbyType" class="org.spsystem.action.ViewPurchaseAction" method="chooseType">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action> 
+        
+        <action name="deletePurchase" class="org.spsystem.action.ViewPurchaseAction" method="delete">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action>
+        
+         <action name="changePurchase" class="org.spsystem.action.ChangePurchaseAction">
+        	<result>/WEB-INF/content/purchase.jsp</result>
+        </action>
+        
+        <action name="viewSale" class="org.spsystem.action.ViewSaleAction">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action>
+        
+         <action name="viewSaleOrderbyTime" class="org.spsystem.action.ViewSaleAction" method="timeOrder">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action>
+        
+        <action name="viewSaleOrderbyNum" class="org.spsystem.action.ViewSaleAction" method="numOrder">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action>
+        
+          <action name="s_findByGoodsName" class="org.spsystem.action.ViewSaleAction" method="findByGoodsName">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action>
+        
+         <action name="s_findByGoodsID" class="org.spsystem.action.ViewSaleAction" method="findByGoodsId">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action>
+        
+         <action name="s_findByStaff" class="org.spsystem.action.ViewSaleAction" method="findByStaff">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action>
+        
+          <action name="viewSaleChosenbyType" class="org.spsystem.action.ViewSaleAction" method="chooseType">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action> 
+        
+         <action name="viewGoodsSales" class="org.spsystem.action.ViewSaleAction" method="findGoodsSales">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action>
+        
+         <action name="deleteSale" class="org.spsystem.action.ViewSaleAction" method="delete">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action>
+        
+        <action name="changeSale" class="org.spsystem.action.ChangeSaleAction">
+        	<result>/WEB-INF/content/sale.jsp</result>
+        </action>
+        
+        <action name="viewGoods" class="org.spsystem.action.ViewGoodsAction">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+        <action name="g_findByGoodsName" class="org.spsystem.action.ViewGoodsAction" method="findByGoodsName">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+         <action name="g_findByGoodsID" class="org.spsystem.action.ViewGoodsAction" method="findByGoodsId">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+        <action name="viewGoodsChosenbyType" class="org.spsystem.action.ViewGoodsAction" method="chooseType">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action> 
+        
+        <action name="viewGoodsOrderbyNumH" class="org.spsystem.action.ViewGoodsAction" method="numOrderHigh">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+        <action name="viewGoodsOrderbyNumL" class="org.spsystem.action.ViewGoodsAction" method="numOrderLow">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+        <action name="viewGoodsOrderbyLeftL" class="org.spsystem.action.ViewGoodsAction" method="leftOrderLow">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+        <action name="viewGoodsOrderbyLeftH" class="org.spsystem.action.ViewGoodsAction" method="leftOrderHigh">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+        <action name="viewGoodsOrderbyProfitH" class="org.spsystem.action.ViewGoodsAction" method="profitOrderHigh">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+        <action name="viewGoodsOrderbyProfitL" class="org.spsystem.action.ViewGoodsAction" method="profitOrderLow">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+         <action name="viewShopInf" class="org.spsystem.action.ViewShopAction">
+        	<result>/WEB-INF/content/shop.jsp</result>
+        </action>
+        
+        <action name="viewGoodsById" class="org.spsystem.action.ViewGoodsAction" method="viewGoodsById">
+        	<result>/WEB-INF/content/goods.jsp</result>
+        </action>
+        
+        <action name="main" class="org.spsystem.action.MainAction">
+        	<result>/WEB-INF/content/main.jsp</result>
+        </action>
+        </package>
+        <package name="spsystem" extends="json-default">  
+        <action name="viewGoodsPurchase" class="org.spsystem.action.ViewGoodsJSON" method="findGoodsPurchases">
+            <!-- 返回json类型数据 -->
+            <result type="json">
+                <param name="res">res</param>
+            </result>
+        </action>
+        
+         <action name="viewGoodsSale" class="org.spsystem.action.ViewGoodsJSON" method="findGoodsSales">
+            <result type="json">
+                <param name="res">res</param>
+            </result>
+        </action>
+        
+         <action name="pieSaleNumScale" class="org.spsystem.action.ViewGoodsJSON" method="findGoodsSaleNumScale">
+            <result type="json">
+                <param name="res">res</param>
+            </result>
+        </action>
+        
+        <action name="pieProfitScale" class="org.spsystem.action.ViewGoodsJSON" method="findGoodsProfitScale">
+            <result type="json">
+                <param name="res">res</param>
+            </result>
+        </action>
+        
+        <action name="lineSaleInf" class="org.spsystem.action.ViewGoodsJSON" method="findGoodsSaleInf">
+            <result type="json">
+                <param name="res">res</param>
+            </result>
+        </action>
+        
+        <action name="columnSale" class="org.spsystem.action.ViewGoodsJSON" method="findGoodsSalePriceNum">
+            <result type="json">
+                <param name="res">res</param>
+            </result>
+        </action>
+        
+         <action name="typeNum" class="org.spsystem.action.ViewShopAction" method="getTypeNum">
+            <result type="json">
+                <param name="res">res</param>
+            </result>
+        </action>
+    </package>
+</struts>

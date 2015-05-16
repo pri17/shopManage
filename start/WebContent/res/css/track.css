@@ -1,0 +1,126 @@
+/* 由开发人员工具生成。它可能不是原始源文件的准确表示形式。*/
+#track {
+	z-index: 6; 
+	position: absolute; 
+	height: 220px; 
+	width: 210px;
+	position:fixed;
+}
+#track #track_left {
+	width: 60px; 
+	float: right; 
+	height: 220px;
+}
+#track #track_right {
+	margin-top: 46px; 
+	width: 150px; 
+	background: url(../Design/track_content_2.jpg) repeat-x; 
+	float: right; 
+	height: 158px
+}
+#track #track_right .tr_content {
+	padding-bottom: 0px; 
+	padding-left: 0; 
+	padding-right: 0px; 
+	font-size: 12px; 
+	padding-top: 12px;
+	margin-left:5px;
+	margin-right:5px;
+	overflow:auto;
+}
+#track #track_right .tr_content .trc_left {
+	width: 140px; float: left; margin-right:0 
+}
+#track #track_right .tr_content .trc_left ul li {
+	text-align: left;  
+	display:block;
+	line-height:20px;
+	color:White;
+}
+#track #track_right .tr_content .trc_left ul li.trc_pic {
+	margin-top: 5px; width: 150px; height: 65px
+}
+#track #track_right .tr_content .trc_left ul li a {
+	color: #ffffff
+}
+#track #track_left .tl_top {
+	width: 90px; 
+	background: url(../Design/track_left_top_2.png) no-repeat left bottom; 
+	height: 170px
+}
+#track #track_left .tl_top1 {
+	width: 90px; 
+	background: url(../Design/track_left_top_1.png) no-repeat left bottom; 
+	height: 170px
+}
+#track #track_left .tl_top3 {
+	width: 90px; 
+	background: url(../Design/track_left_top_3.png) no-repeat left bottom; 
+	height: 170px
+}
+#track #track_left .tl_top4 {
+	width: 90px; 
+	background: url(../Design/track_left_top_4.png) no-repeat left bottom; 
+	height: 170px
+}
+#track #track_left .tl_top_post {
+	width: 90px; 
+	background: url(../Design/track_left_top_post.png) no-repeat left bottom; 
+	height: 170px
+}
+#track #track_left .tl_top_mer {
+	width: 90px; 
+	background: url(../Design/track_left_top_mer.png) no-repeat left bottom; 
+	height: 170px
+}
+#track #track_left .tl_top_buy {
+	width: 90px; 
+	background: url(../Design/track_left_top_buy.png) no-repeat left bottom; 
+	height: 170px
+}
+#track #track_left .tl_bottom {
+	position: relative
+}
+#track #track_left .tl_bottom .fix_track_png {
+	z-index: 6; 
+	position: absolute; 
+	width: 46px; 
+	margin-left:14px;
+	background: url(../Design/track_left_bottom_1.png) no-repeat right top; height: 38px
+}
+#track #track_left .tl_bottom #tlb_show {
+	z-index: 7; 
+	position: absolute; 
+	width: 36px; 
+	height: 38px; 
+	cursor: pointer;
+}
+#track #track_left .tl_bottom #tlb_hidden {
+	z-index: 7; 
+	position: absolute; 
+	width: 36px; 
+	height: 38px; 
+	cursor: pointer
+}
+#track #track_left .tl_bottom #tlb_show {
+	background: url(../Design/track_arrow_left.jpg) no-repeat 60% 50%;
+	margin-left:14px;
+}
+#track #track_left .tl_bottom #tlb_hidden {
+	background: url(../Design/track_arrow_right.jpg) no-repeat 60% 50%;
+	margin-left:14px;
+}
+.tl_top4 .item,.tl_top3 .item
+{
+    padding-top:70px;
+    padding-left:15px;
+    margin:0px;
+}
+.tl_top4 .item li, .tl_top3 .item li
+{
+    list-style:none;
+}
+.tl_top4 .item li img, .tl_top3 .item li img
+{
+    max-width:100%;
+}
