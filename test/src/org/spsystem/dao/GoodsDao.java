@@ -10,7 +10,7 @@ import org.spsystem.vo.GoodsInfBean;
 public interface GoodsDao extends BaseDao<Goods>{
 	
 	/**
-	 * 按商品名查找商品
+	 * 按商品名查找商品（模糊）
 	 * @param goodsName 商品名
 	 * @return 商品信息
 	 */
@@ -76,4 +76,20 @@ public interface GoodsDao extends BaseDao<Goods>{
 	 * @return 该商店所有商品的售货信息（销量、收入、售货单数目）
 	 */
 	List<Object[]> findSaleInfByName(Shop shop, String goodsName);
+	////
+	////
+	////
+	////
+	/**
+	 * 通过商品id号来查找
+	 * @param int id
+	 * @return 该商店基本信息
+	 */
+	List<Goods> findGoodsByid(int id);
+	/**
+	 * 通过种类名字来模糊查找
+	 * @param string type_name
+	 * @return 该商店基本信息
+	 */
+	List<Goods>findGoodsByType(String type_name);
 }
