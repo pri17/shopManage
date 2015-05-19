@@ -1,4 +1,4 @@
-package servlet;
+package com.zm.servlet;
 
 import java.io.IOException;
 
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.Staff;
-import db.DB;
+import com.zm.db.DB;
+import com.zm.model.Staff;
 
 public class savePurchase extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response){

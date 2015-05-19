@@ -1,4 +1,4 @@
-package servlet;
+package com.zm.servlet;
 
 import java.io.IOException;
 
@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.Staff;
-import db.DB;
+import com.zm.db.DB;
+import com.zm.model.Staff;
 
-public class saveGoodsPurchase extends HttpServlet {
+public class saveSale  extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session=request.getSession();
 		Staff user=(Staff)session.getAttribute("user");
@@ -23,29 +23,33 @@ public class saveGoodsPurchase extends HttpServlet {
 		}else{
 			DB db=new DB();
 			try{
+				int id = Integer.parseInt(request.getParameter("id"));
 				double price = Double.parseDouble(request.getParameter("price"));
-				double inprice = Double.parseDouble(request.getParameter("inprice"));
 				int num = Integer.parseInt(request.getParameter("num"));
-				int type = Integer.parseInt(request.getParameter("type"));
-				String name = request.getParameter("name");
-				int id = db.saveGoods(name, type);
-				
-					db.savePurchase(id, price, num, user, inprice);
+				if(db.GoodsExist(id)){
+					db.saveSale(id, price, num, user);
 					try {
 						
-						response.sendRedirect("../goods/homePage.jsp?error=no");
+						response.sendRedirect("../seller/homePage.jsp?error=no");
 					} catch (IOException e) {
 						e.printStackTrace();
-					}	
-			
+					}
+				}	
+				else{
+					try {
+						response.sendRedirect("../seller/homePage.jsp?error=yes");
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
 			}catch(Exception e){
 				try {
-					response.sendRedirect("../goods/homePage.jsp?IOerror=yes");
+					response.sendRedirect("../seller/homePage.jsp?IOerror=yes");
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
+				e.printStackTrace();
 			}
-			
 			
 		}
 	}

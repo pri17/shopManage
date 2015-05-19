@@ -1,4 +1,4 @@
-package com.interceptor;
+package com.mansys.interceptor;
 
 import java.util.Map;
 

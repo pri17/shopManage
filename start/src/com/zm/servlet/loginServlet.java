@@ -1,13 +1,16 @@
-package servlet;
+package com.zm.servlet;
 import java.io.*;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.zm.db.DB;
+import com.zm.model.Staff;
+
 import java.util.ArrayList;
-import model.Staff;
-import db.DB;
 public class loginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username=new String(request.getParameter("username").getBytes("ISO-8859-1"),"UTF-8");

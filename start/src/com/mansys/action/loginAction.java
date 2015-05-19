@@ -1,10 +1,9 @@
-package com.manage;
+package com.mansys.action;
 
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionSupport;
-
-import model.Staff;
+import com.zm.model.Staff;
 
 public class loginAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
