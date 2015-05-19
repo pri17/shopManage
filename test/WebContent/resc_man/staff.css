@@ -1,0 +1,196 @@
+body {
+	font: 12px/18px Arial, "宋体";
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+a {
+	color: rgb(4, 73, 190);
+}
+img {
+	border: 0px currentColor;
+}
+aside {
+	margin: 0px; padding: 0px; display: block;
+}
+dt{
+	border-bottom:0px;
+}
+.main_page {
+	background: url("../img/bg.png"); 
+	padding-bottom: 10px;
+}
+.main_page a:visited {
+	text-decoration: none;
+}
+.main_page .head {
+	background: white;
+	width: 100%;
+	height: 100px;
+	border-bottom-color: rgb(218, 218, 218);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+.head .head_container {
+	margin: 0px auto; 
+	transition:width 0.5s; /*支持Internet Explorer 10、Firefox、Opera、Chrome */
+	width: 1158px; 
+	position: relative; 
+	-webkit-transition: width .5s; /*支持Safari*/
+	-o-transition: width .5s;
+}
+.head .logo {
+	margin-top: 20px; 
+	display: inline-block;
+}
+.main_page .container {
+	background: url("../img/nav_bg.png") repeat-y left; 
+	margin: 35px auto 0px; 
+	transition:width 0.5s, 	background-position 0.5s; 
+	width: 1158px; 
+	-webkit-transition: width .5s, 	background-position .5s; 
+	-moz-transition: width .5s, background-position .5s; 
+	-o-transition: width .5s, background-position .5s;
+}
+.clearfix::after {
+	height: 0px; 
+	clear: both; 
+	display: block; 
+	visibility: hidden; 
+	content: ".";
+}
+.main_page .page_aside {
+	width: 178px; 
+	padding-bottom: 50px; 
+	float: left;
+}
+.user_info {
+	background: rgb(77, 77, 77); 
+	position: relative;
+}
+.user_info .user_avatar {
+	border-radius: 30px; 
+	left: 8px; 
+	top: -20px; 
+	width: 60px; 
+	height: 60px; 
+	position: absolute;
+}
+.user_info .info_mesaage {
+	color: rgb(211, 229, 251); 
+	padding-top: 5px; 
+	padding-left: 80px;
+}
+nav {
+	margin: 0px; 
+	padding: 0px; 
+	display: block;
+}
+.nav_sec {
+	padding: 11px 0px; 
+	border-bottom-color: rgb(100, 100, 100); 
+	border-bottom-width: 1px; 
+	border-bottom-style: solid;
+}
+.nav_sec dt {
+	background: url("../img/nav_icon.png") no-repeat 0px 0px; 
+	width: 140px; 
+	height: 29px; 
+	color: white; 
+	line-height: 29px; 
+	font-weight: bold; 
+	margin-left: -1px; 
+}
+
+.nav_sec dt.homepage {
+	background-position: 20px 8px;
+	width: 180px; 
+	padding-left: 0px;
+}
+.nav_sec dd {
+	width: 140px; 
+	height: 26px; 
+	line-height: 26px; 
+	margin-left: -1px; 
+}
+.nav_sec .active .index_page_uri {
+	background-color: transparent;
+}
+.nav_sec .staff a {
+	background-color: rgb(96, 96, 96);
+}
+.nav_sec .staff {
+	background-color: rgb(96,96, 96);
+}
+
+.nav_sec .index_page_uri:hover {
+	background-color: rgb(0, 0, 0);;
+}
+
+.nav_sec .homepage:hover {
+	background-color: rgb(0,0,0);
+}
+
+.nav_sec a:hover {
+	background-color: rgb(0, 0, 0);
+}
+.nav_sec a
+{
+    width: 140px; 
+    padding-left: 40px; 
+    display: block;
+}
+.nav_sec a:link {
+	color: white; 
+	text-decoration: none;
+}
+
+.nav_sec a:visited {
+	color: white; 
+	text-decoration: none;
+}
+.nav_sec dt.staff {
+	background-position: 20px -42px;
+}
+.nav_sec dt.shop {
+	background-position: 20px -67px;
+}
+.nav_sec dt.info {
+	background-position: 20px -143px;
+}
+.main_page .main_content {
+	width: 950px; 
+	float: right;
+}
+.main_page .panel {
+	background: white; 
+	border: 1px solid rgb(236, 236, 236);
+}
+.main_page .first_panel {
+	border-bottom-color: currentColor; 
+	border-bottom-width: 0px; 
+	border-bottom-style: none;
+}
+.main_page .panel_second {
+	background: rgb(222,222,222); 
+	border-bottom-width: 10px; 
+	border-bottom-style: none;
+}
+.panel h3 {
+	padding: 20px 25px; font-family: "微软雅黑"; 
+	font-size: 20px; 
+	font-weight: bold; 
+	border-bottom-color: rgb(236, 236, 236); 
+	border-bottom-width: 1px; 
+	border-bottom-style: solid;
+}
+table{
+	text-align:center;
+}
+.search_box{
+	left: 8px; 
+	top: -20px; 
+	position: relative;
+}
+.search_box input{
+	width:70px;
+}

@@ -24,7 +24,7 @@ public class loginServlet extends HttpServlet {
 			//System.out.print(level);
 			session.setAttribute("level",level);
 			if(level == 1)
-				response.sendRedirect("/shoppp/");
+				response.sendRedirect("/test/manMain");//Ìø×ªµ½package:org.manager.action.mainAction
 			else if(level ==2)
 				response.sendRedirect("/test/main?id="+user.getShop_id());
 			else if(user.getStaff_level()==3)
