@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>	
+  
+  
+  <servlet>
+		<servlet-name>registerShop</servlet-name>
+    		<servlet-class>servlet.registerShop</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    		<servlet-name>registerShop</servlet-name>
+    		<url-pattern>/registerShop</url-pattern>
+  	</servlet-mapping>
+  	
+  <servlet>
+		<servlet-name>registerGoods</servlet-name>
+    		<servlet-class>servlet.registerGoods</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>registerGoods</servlet-name>
+    		<url-pattern>/registerGoods</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>staff</servlet-name>
+    		<servlet-class>servlet.staffList</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>staff</servlet-name>
+    		<url-pattern>/staff</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>shops</servlet-name>
+    		<servlet-class>servlet.shopsList</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>shops</servlet-name>
+    		<url-pattern>/shops</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>goods</servlet-name>
+    		<servlet-class>servlet.goodsList</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>goods</servlet-name>
+    		<url-pattern>/goods</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>sales</servlet-name>
+    		<servlet-class>servlet.salesList</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>sales</servlet-name>
+    		<url-pattern>/sales</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>purchase</servlet-name>
+    		<servlet-class>servlet.purchaseList</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>purchase</servlet-name>
+    		<url-pattern>/purchase</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>staffByName</servlet-name>
+    		<servlet-class>search.staffByName</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>staffByName</servlet-name>
+    		<url-pattern>/staffByName</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>staffByID</servlet-name>
+    		<servlet-class>search.staffByID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>staffByID</servlet-name>
+    		<url-pattern>/staffByID</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>staffByLevel</servlet-name>
+    		<servlet-class>search.staffByLevel</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>staffByLevel</servlet-name>
+    		<url-pattern>/staffByLevel</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>shopByName</servlet-name>
+    		<servlet-class>search.shopByName</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>shopByName</servlet-name>
+    		<url-pattern>/shopByName</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	<servlet>
+		<servlet-name>shopByID</servlet-name>
+    		<servlet-class>search.shopByID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>shopByID</servlet-name>
+    		<url-pattern>/shopByID</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>shopByStaffName</servlet-name>
+    		<servlet-class>search.shopByStaffName</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>shopByStaffName</servlet-name>
+    		<url-pattern>/shopByStaffName</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>shopByStaffID</servlet-name>
+    		<servlet-class>search.shopByStaffID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>shopByStaffID</servlet-name>
+    		<url-pattern>/shopByStaffID</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	<servlet>
+		<servlet-name>shopByArea</servlet-name>
+    		<servlet-class>search.shopByArea</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>shopByArea</servlet-name>
+    		<url-pattern>/shopByArea</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	<servlet>
+		<servlet-name>shopByPrice</servlet-name>
+    		<servlet-class>search.shopByPrice</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>shopByPrice</servlet-name>
+    		<url-pattern>/shopByPrice</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>goodsByName</servlet-name>
+    		<servlet-class>search.goodsByName</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>goodsByName</servlet-name>
+    		<url-pattern>/goodsByName</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>goodsByID</servlet-name>
+    		<servlet-class>search.goodsByID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>goodsByID</servlet-name>
+    		<url-pattern>/goodsByID</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>goodsByType</servlet-name>
+    		<servlet-class>search.goodsByType</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>goodsByType</servlet-name>
+    		<url-pattern>/goodsByType</url-pattern>
+  	</servlet-mapping>
+<!-- del servlets -->  	
+ 	<servlet>
+		<servlet-name>delShop</servlet-name>
+    		<servlet-class>del.delShop</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>delShop</servlet-name>
+    		<url-pattern>/delShop</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>delGoods</servlet-name>
+    		<servlet-class>del.delGoods</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>delGoods</servlet-name>
+    		<url-pattern>/delGoods</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>delPurchase</servlet-name>
+    		<servlet-class>del.delPurchase</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>delPurchase</servlet-name>
+    		<url-pattern>/delPurchase</url-pattern>
+  	</servlet-mapping>
+  	
+ 
+ 	<servlet>
+		<servlet-name>delSales</servlet-name>
+    		<servlet-class>del.delSales</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>delSales</servlet-name>
+    		<url-pattern>/delSales</url-pattern>
+  	</servlet-mapping>
+  	<!-- delllllllllllllllllllllll -->
+  	
+  	
+  	<!-- search sales -->
+ 
+  	<servlet>
+		<servlet-name>salesByShopName</servlet-name>
+    		<servlet-class>sp.salesByShopName</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>salesByShopName</servlet-name>
+    		<url-pattern>/salesByShopName</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>salesByShopID</servlet-name>
+    		<servlet-class>sp.salesByShopID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>salesByShopID</servlet-name>
+    		<url-pattern>/salesByShopID</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	<servlet>
+		<servlet-name>salesByStaffName</servlet-name>
+    		<servlet-class>sp.salesByStaffName</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>salesByStaffName</servlet-name>
+    		<url-pattern>/salesByStaffName</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>salesByStaffID</servlet-name>
+    		<servlet-class>sp.salesByStaffID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>salesByStaffID</servlet-name>
+    		<url-pattern>/salesByStaffID</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>salesByID</servlet-name>
+    		<servlet-class>sp.salesByID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>salesByID</servlet-name>
+    		<url-pattern>/salesByID</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>salesByNum</servlet-name>
+    		<servlet-class>sp.salesByNum</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>salesByNum</servlet-name>
+    		<url-pattern>/salesByNum</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	<servlet>
+		<servlet-name>salesByDate</servlet-name>
+    		<servlet-class>sp.salesByDate</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>salesByDate</servlet-name>
+    		<url-pattern>/salesByDate</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+<!-- search purchase  -->
+	<servlet>
+		<servlet-name>purchaseByShopName</servlet-name>
+    		<servlet-class>sp.purchaseByShopName</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>purchaseByShopName</servlet-name>
+    		<url-pattern>/purchaseByShopName</url-pattern>
+  	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>purchaseByShopID</servlet-name>
+    		<servlet-class>sp.purchaseByShopID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>purchaseByShopID</servlet-name>
+    		<url-pattern>/purchaseByShopID</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+		<servlet-name>purchaseByStaffName</servlet-name>
+    		<servlet-class>sp.purchaseByStaffName</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>purchaseByStaffName</servlet-name>
+    		<url-pattern>/purchaseByStaffName</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	<servlet>
+		<servlet-name>purchaseByStaffID</servlet-name>
+    		<servlet-class>sp.purchaseByStaffID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>purchaseByStaffID</servlet-name>
+    		<url-pattern>/purchaseByStaffID</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	<servlet>
+		<servlet-name>purchaseByID</servlet-name>
+    		<servlet-class>sp.purchaseByID</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>purchaseByID</servlet-name>
+    		<url-pattern>/purchaseByID</url-pattern>
+  	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>purchaseByNum</servlet-name>
+    		<servlet-class>sp.purchaseByNum</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>purchaseByNum</servlet-name>
+    		<url-pattern>/purchaseByNum</url-pattern>
+  	</servlet-mapping>
+
+<servlet>
+		<servlet-name>purchaseByDate</servlet-name>
+    		<servlet-class>sp.purchaseByDate</servlet-class>
+ 	</servlet>
+ 	  	<servlet-mapping>
+    		<servlet-name>purchaseByDate</servlet-name>
+    		<url-pattern>/purchaseByDate</url-pattern>
+  	</servlet-mapping>
+
+
+  	<welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -32,8 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             		<a href="/manager/login.aspx" class="login-type login-type--normal" id="J-login-link" style="display:none">用户登录<i></i></a>
            			 用户名
         		</h2>
-        		<!-- form的method已经修改-->
-    			<form method="get" action="login" id="form2" class="form form--stack">
+    			<form method="get" action="servlet/loginServlet" id="form2" class="form form--stack">
 					<div class="aspNetHidden">
 						<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTkxODUyOTc0ZGRvTK7TZd9HpBd3/S+VWz+JfBw30fB8W1GxVWLTeHRrKA==">
 					</div>
