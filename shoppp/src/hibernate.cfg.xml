@@ -18,12 +18,13 @@
 			com.mysql.jdbc.Driver
 		</property>
 		<property name="myeclipse.connection.profile">shopinf</property>
-		<mapping resource="com/system/model/Goods.hbm.xml" />
-		<mapping resource="com/system/model/Purchase.hbm.xml" />
-		<mapping resource="com/system/model/Sale.hbm.xml" />
-		<mapping resource="com/system/model/Shop.hbm.xml" />
-		<mapping resource="com/system/model/Staff.hbm.xml" />
-		<mapping resource="com/system/model/Type.hbm.xml" />
+	
+		<mapping class="com.system.model.Goods" />
+		<mapping class="com.system.model.Purchase" />
+		<mapping class="com.system.model.Sale" />
+		<mapping class="com.system.model.Shop" />
+		<mapping class="com.system.model.Staff" />
+		<mapping class="com.system.model.Type" />
 
 	</session-factory>
 

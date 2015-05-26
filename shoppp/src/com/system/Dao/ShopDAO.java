@@ -1,15 +1,21 @@
 package com.system.Dao;
 
-import com.system.model.Shop;
-
 import java.util.List;
 import java.util.Set;
 
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
-import org.hibernate.criterion.Example;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import static org.hibernate.criterion.Example.create;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.system.model.Shop;
 
 /**
  * A data access object (DAO) providing persistence and search support for Shop
@@ -22,17 +28,32 @@ import org.slf4j.LoggerFactory;
  * @see com.system.model.Shop
  * @author MyEclipse Persistence Tools
  */
-public class ShopDAO extends BaseHibernateDAO {
+@Transactional
+public class ShopDAO {
 	private static final Logger log = LoggerFactory.getLogger(ShopDAO.class);
 	// property constants
 	public static final String SHOP_NAME = "shopName";
 	public static final String DISTRICT = "district";
 	public static final String PRICE = "price";
 
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	private Session getCurrentSession() {
+		return sessionFactory.getCurrentSession();
+	}
+
+	protected void initDao() {
+		// do nothing
+	}
+
 	public void save(Shop transientInstance) {
 		log.debug("saving Shop instance");
 		try {
-			getSession().save(transientInstance);
+			getCurrentSession().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -43,7 +64,7 @@ public class ShopDAO extends BaseHibernateDAO {
 	public void delete(Shop persistentInstance) {
 		log.debug("deleting Shop instance");
 		try {
-			getSession().delete(persistentInstance);
+			getCurrentSession().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -54,8 +75,8 @@ public class ShopDAO extends BaseHibernateDAO {
 	public Shop findById(java.lang.Integer id) {
 		log.debug("getting Shop instance with id: " + id);
 		try {
-			Shop instance = (Shop) getSession()
-					.get("com.system.model.Shop", id);
+			Shop instance = (Shop) getCurrentSession().get(
+					"com.system.model.Shop", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -63,11 +84,12 @@ public class ShopDAO extends BaseHibernateDAO {
 		}
 	}
 
-	public List findByExample(Shop instance) {
+	public List<Shop> findByExample(Shop instance) {
 		log.debug("finding Shop instance by example");
 		try {
-			List results = getSession().createCriteria("com.system.model.Shop")
-					.add(Example.create(instance)).list();
+			List<Shop> results = (List<Shop>) getCurrentSession()
+					.createCriteria("com.system.model.Shop")
+					.add(create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -83,7 +105,7 @@ public class ShopDAO extends BaseHibernateDAO {
 		try {
 			String queryString = "from Shop as model where model."
 					+ propertyName + "= ?";
-			Query queryObject = getSession().createQuery(queryString);
+			Query queryObject = getCurrentSession().createQuery(queryString);
 			queryObject.setParameter(0, value);
 			return queryObject.list();
 		} catch (RuntimeException re) {
@@ -92,15 +114,15 @@ public class ShopDAO extends BaseHibernateDAO {
 		}
 	}
 
-	public List findByShopName(Object shopName) {
+	public List<Shop> findByShopName(Object shopName) {
 		return findByProperty(SHOP_NAME, shopName);
 	}
 
-	public List findByDistrict(Object district) {
+	public List<Shop> findByDistrict(Object district) {
 		return findByProperty(DISTRICT, district);
 	}
 
-	public List findByPrice(Object price) {
+	public List<Shop> findByPrice(Object price) {
 		return findByProperty(PRICE, price);
 	}
 
@@ -108,7 +130,7 @@ public class ShopDAO extends BaseHibernateDAO {
 		log.debug("finding all Shop instances");
 		try {
 			String queryString = "from Shop";
-			Query queryObject = getSession().createQuery(queryString);
+			Query queryObject = getCurrentSession().createQuery(queryString);
 			return queryObject.list();
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
@@ -119,7 +141,7 @@ public class ShopDAO extends BaseHibernateDAO {
 	public Shop merge(Shop detachedInstance) {
 		log.debug("merging Shop instance");
 		try {
-			Shop result = (Shop) getSession().merge(detachedInstance);
+			Shop result = (Shop) getCurrentSession().merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -131,7 +153,7 @@ public class ShopDAO extends BaseHibernateDAO {
 	public void attachDirty(Shop instance) {
 		log.debug("attaching dirty Shop instance");
 		try {
-			getSession().saveOrUpdate(instance);
+			getCurrentSession().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -142,11 +164,16 @@ public class ShopDAO extends BaseHibernateDAO {
 	public void attachClean(Shop instance) {
 		log.debug("attaching clean Shop instance");
 		try {
-			getSession().buildLockRequest(LockOptions.NONE).lock(instance);
+			getCurrentSession().buildLockRequest(LockOptions.NONE).lock(
+					instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
 			throw re;
 		}
+	}
+
+	public static ShopDAO getFromApplicationContext(ApplicationContext ctx) {
+		return (ShopDAO) ctx.getBean("ShopDAO");
 	}
 }

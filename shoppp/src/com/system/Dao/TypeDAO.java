@@ -1,15 +1,21 @@
 package com.system.Dao;
 
-import com.system.model.Type;
-
 import java.util.List;
 import java.util.Set;
 
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
-import org.hibernate.criterion.Example;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import static org.hibernate.criterion.Example.create;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.system.model.Type;
 
 /**
  * A data access object (DAO) providing persistence and search support for Type
@@ -22,15 +28,30 @@ import org.slf4j.LoggerFactory;
  * @see com.system.model.Type
  * @author MyEclipse Persistence Tools
  */
-public class TypeDAO extends BaseHibernateDAO {
+@Transactional
+public class TypeDAO {
 	private static final Logger log = LoggerFactory.getLogger(TypeDAO.class);
 	// property constants
 	public static final String TYPE_NAME = "typeName";
 
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	private Session getCurrentSession() {
+		return sessionFactory.getCurrentSession();
+	}
+
+	protected void initDao() {
+		// do nothing
+	}
+
 	public void save(Type transientInstance) {
 		log.debug("saving Type instance");
 		try {
-			getSession().save(transientInstance);
+			getCurrentSession().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -41,7 +62,7 @@ public class TypeDAO extends BaseHibernateDAO {
 	public void delete(Type persistentInstance) {
 		log.debug("deleting Type instance");
 		try {
-			getSession().delete(persistentInstance);
+			getCurrentSession().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -52,8 +73,8 @@ public class TypeDAO extends BaseHibernateDAO {
 	public Type findById(java.lang.Integer id) {
 		log.debug("getting Type instance with id: " + id);
 		try {
-			Type instance = (Type) getSession()
-					.get("com.system.model.Type", id);
+			Type instance = (Type) getCurrentSession().get(
+					"com.system.model.Type", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -61,11 +82,12 @@ public class TypeDAO extends BaseHibernateDAO {
 		}
 	}
 
-	public List findByExample(Type instance) {
+	public List<Type> findByExample(Type instance) {
 		log.debug("finding Type instance by example");
 		try {
-			List results = getSession().createCriteria("com.system.model.Type")
-					.add(Example.create(instance)).list();
+			List<Type> results = (List<Type>) getCurrentSession()
+					.createCriteria("com.system.model.Type")
+					.add(create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -81,7 +103,7 @@ public class TypeDAO extends BaseHibernateDAO {
 		try {
 			String queryString = "from Type as model where model."
 					+ propertyName + "= ?";
-			Query queryObject = getSession().createQuery(queryString);
+			Query queryObject = getCurrentSession().createQuery(queryString);
 			queryObject.setParameter(0, value);
 			return queryObject.list();
 		} catch (RuntimeException re) {
@@ -90,7 +112,7 @@ public class TypeDAO extends BaseHibernateDAO {
 		}
 	}
 
-	public List findByTypeName(Object typeName) {
+	public List<Type> findByTypeName(Object typeName) {
 		return findByProperty(TYPE_NAME, typeName);
 	}
 
@@ -98,7 +120,7 @@ public class TypeDAO extends BaseHibernateDAO {
 		log.debug("finding all Type instances");
 		try {
 			String queryString = "from Type";
-			Query queryObject = getSession().createQuery(queryString);
+			Query queryObject = getCurrentSession().createQuery(queryString);
 			return queryObject.list();
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
@@ -109,7 +131,7 @@ public class TypeDAO extends BaseHibernateDAO {
 	public Type merge(Type detachedInstance) {
 		log.debug("merging Type instance");
 		try {
-			Type result = (Type) getSession().merge(detachedInstance);
+			Type result = (Type) getCurrentSession().merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -121,7 +143,7 @@ public class TypeDAO extends BaseHibernateDAO {
 	public void attachDirty(Type instance) {
 		log.debug("attaching dirty Type instance");
 		try {
-			getSession().saveOrUpdate(instance);
+			getCurrentSession().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -132,11 +154,16 @@ public class TypeDAO extends BaseHibernateDAO {
 	public void attachClean(Type instance) {
 		log.debug("attaching clean Type instance");
 		try {
-			getSession().buildLockRequest(LockOptions.NONE).lock(instance);
+			getCurrentSession().buildLockRequest(LockOptions.NONE).lock(
+					instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
 			throw re;
 		}
+	}
+
+	public static TypeDAO getFromApplicationContext(ApplicationContext ctx) {
+		return (TypeDAO) ctx.getBean("TypeDAO");
 	}
 }

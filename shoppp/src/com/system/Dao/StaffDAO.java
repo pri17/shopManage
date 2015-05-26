@@ -1,15 +1,21 @@
 package com.system.Dao;
 
-import com.system.model.Staff;
-
 import java.util.List;
 import java.util.Set;
 
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
-import org.hibernate.criterion.Example;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import static org.hibernate.criterion.Example.create;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.system.model.Staff;
 
 /**
  * A data access object (DAO) providing persistence and search support for Staff
@@ -22,7 +28,8 @@ import org.slf4j.LoggerFactory;
  * @see com.system.model.Staff
  * @author MyEclipse Persistence Tools
  */
-public class StaffDAO extends BaseHibernateDAO {
+@Transactional
+public class StaffDAO {
 	private static final Logger log = LoggerFactory.getLogger(StaffDAO.class);
 	// property constants
 	public static final String STAFF_NAME = "staffName";
@@ -30,10 +37,24 @@ public class StaffDAO extends BaseHibernateDAO {
 	public static final String STAFF_LEVEL = "staffLevel";
 	public static final String SHOP_ID = "shopId";
 
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	private Session getCurrentSession() {
+		return sessionFactory.getCurrentSession();
+	}
+
+	protected void initDao() {
+		// do nothing
+	}
+
 	public void save(Staff transientInstance) {
 		log.debug("saving Staff instance");
 		try {
-			getSession().save(transientInstance);
+			getCurrentSession().save(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -44,7 +65,7 @@ public class StaffDAO extends BaseHibernateDAO {
 	public void delete(Staff persistentInstance) {
 		log.debug("deleting Staff instance");
 		try {
-			getSession().delete(persistentInstance);
+			getCurrentSession().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -55,8 +76,8 @@ public class StaffDAO extends BaseHibernateDAO {
 	public Staff findById(java.lang.Integer id) {
 		log.debug("getting Staff instance with id: " + id);
 		try {
-			Staff instance = (Staff) getSession().get("com.system.model.Staff",
-					id);
+			Staff instance = (Staff) getCurrentSession().get(
+					"com.system.model.Staff", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -64,12 +85,12 @@ public class StaffDAO extends BaseHibernateDAO {
 		}
 	}
 
-	public List findByExample(Staff instance) {
+	public List<Staff> findByExample(Staff instance) {
 		log.debug("finding Staff instance by example");
 		try {
-			List results = getSession()
+			List<Staff> results = (List<Staff>) getCurrentSession()
 					.createCriteria("com.system.model.Staff")
-					.add(Example.create(instance)).list();
+					.add(create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -85,7 +106,7 @@ public class StaffDAO extends BaseHibernateDAO {
 		try {
 			String queryString = "from Staff as model where model."
 					+ propertyName + "= ?";
-			Query queryObject = getSession().createQuery(queryString);
+			Query queryObject = getCurrentSession().createQuery(queryString);
 			queryObject.setParameter(0, value);
 			return queryObject.list();
 		} catch (RuntimeException re) {
@@ -94,19 +115,19 @@ public class StaffDAO extends BaseHibernateDAO {
 		}
 	}
 
-	public List findByStaffName(Object staffName) {
+	public List<Staff> findByStaffName(Object staffName) {
 		return findByProperty(STAFF_NAME, staffName);
 	}
 
-	public List findByStaffPwd(Object staffPwd) {
+	public List<Staff> findByStaffPwd(Object staffPwd) {
 		return findByProperty(STAFF_PWD, staffPwd);
 	}
 
-	public List findByStaffLevel(Object staffLevel) {
+	public List<Staff> findByStaffLevel(Object staffLevel) {
 		return findByProperty(STAFF_LEVEL, staffLevel);
 	}
 
-	public List findByShopId(Object shopId) {
+	public List<Staff> findByShopId(Object shopId) {
 		return findByProperty(SHOP_ID, shopId);
 	}
 
@@ -114,7 +135,7 @@ public class StaffDAO extends BaseHibernateDAO {
 		log.debug("finding all Staff instances");
 		try {
 			String queryString = "from Staff";
-			Query queryObject = getSession().createQuery(queryString);
+			Query queryObject = getCurrentSession().createQuery(queryString);
 			return queryObject.list();
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
@@ -125,7 +146,7 @@ public class StaffDAO extends BaseHibernateDAO {
 	public Staff merge(Staff detachedInstance) {
 		log.debug("merging Staff instance");
 		try {
-			Staff result = (Staff) getSession().merge(detachedInstance);
+			Staff result = (Staff) getCurrentSession().merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -137,7 +158,7 @@ public class StaffDAO extends BaseHibernateDAO {
 	public void attachDirty(Staff instance) {
 		log.debug("attaching dirty Staff instance");
 		try {
-			getSession().saveOrUpdate(instance);
+			getCurrentSession().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -148,11 +169,16 @@ public class StaffDAO extends BaseHibernateDAO {
 	public void attachClean(Staff instance) {
 		log.debug("attaching clean Staff instance");
 		try {
-			getSession().buildLockRequest(LockOptions.NONE).lock(instance);
+			getCurrentSession().buildLockRequest(LockOptions.NONE).lock(
+					instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
 			throw re;
 		}
+	}
+
+	public static StaffDAO getFromApplicationContext(ApplicationContext ctx) {
+		return (StaffDAO) ctx.getBean("StaffDAO");
 	}
 }
