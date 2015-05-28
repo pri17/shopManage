@@ -1,6 +1,5 @@
 # shopManage
 Final homework for software engineering design course and the class --J2EE 
 and is due to complete the code programming before the end of May.==
-
-##1 first thing of all
- I do not have to concern staff about the DAO level.
+##Firstly,I've added Hibernate capbilities.
+#By 5.28 ,I should finished the Dao classes and their implemented classes. 
