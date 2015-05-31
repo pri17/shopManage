@@ -12,34 +12,32 @@ public class StaffDaoHibernate extends BasicDaoHibernate<Staff> implements Staff
 
 	@Override
 	public List<Staff> findBySatffById(int id) {
-		return (find("from Staff where id="+id));
+		return (find("from Staff where staffId="+id));
 	}
 
 	@Override
 	public List<Staff> findByStaffByName(String name) {
-		return (find("from Staff where name like %"+name+"%"));
+		return (find("from Staff where staffName like %"+name+"%"));
 	}
 
 	@Override
 	public List<Staff> findStaffByLevel(int level) {
-		return (find("from Staff where level="+level));
+		return (find("from Staff where staffLevel="+level));
 	}
 
-	@Override//Î´Íê³É
+	@Override
 	public List<Staff> findShopKeeper(Shop shop) {
-		return find("from Staff where level=2 and shop_id="+shop.getShopId());
+		return find("from Staff where staffLevel=2 and shopId="+shop.getShopId());
 	}
 
 	@Override
 	public List<Staff> findShopImporter(Shop shop) {
-		// TODO Auto-generated method stub
-		return null;
+		return find("from Staff where staffLevel=3 and shopId="+shop.getShopId());
 	}
 
 	@Override
 	public List<Staff> findShopExporter(Shop shop) {
-		// TODO Auto-generated method stub
-		return null;
+		return find("from Staff where staffLevel=4 and shopId="+shop.getShopId());
 	}
 
 }

@@ -11,12 +11,12 @@ public class ShopDaoHibernate extends BasicDaoHibernate<Shop> implements ShopDao
 
 	@Override
 	public List<Shop> findByShopName(String name) {
-		return find("from Shop where name like %"+name+"%");
+		return find("from Shop where shopName like %"+name+"%");
 	}
 
 	@Override
 	public List<Shop> findByShopId(int id) {
-		return find("from Shop where id="+id);
+		return find("from Shop where shopId="+id);
 	}
 
 	@Override
