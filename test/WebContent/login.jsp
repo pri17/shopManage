@@ -11,6 +11,6 @@
 </script>
 </head>
 <body>
-
+<jsp:forward page="/start/index.jsp" />
 </body>
 </html>

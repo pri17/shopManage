@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 </div>
     			</div>
     			<div class="panel_second">
-    			<jsp:include page="/goods" flush="true" /></br>
+    			<!--<jsp:include page="/goods" flush="true" /></br>-->
         		</div>
         		</div>
     	</div>

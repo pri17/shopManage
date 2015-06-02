@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
  
 <body class="main_page">
-	<%@ include file="WEB-INF/content/model.jsp" %>
+	<%@ include file="WEB-INF/content-man/model.jsp" %>
 				<div class="panel first_panel">
     				<h3>你好！管理员</h3>
     			</div>

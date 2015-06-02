@@ -8,23 +8,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 	<base href="<%=basePath%>">
 
-	<title>进货列表</title>
- 	<link rel="stylesheet" type="text/css" href="style/5.css">
- 	<link rel="stylesheet" type="tetx/css" href="style/jquery-ui.min.css">
- 	<script type="text/javascript" src="js/searchPurchase.js" charset="GB2312"></script>
+	<title>商店列表</title>
+ 	<link rel="stylesheet" type="text/css" href="style/2.css">
+ 	<script type="text/javascript" src="js/searchShop.js" charset="GB2312"></script>
  	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
- 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
- 	
- 	<script> 
-	$(document).ready(function() { 
-	$("#s6").datepicker({
-	dateFormat:'yy/mm/dd'
-	});
-	$("#s9").datepicker({
-	dateFormat:'yy/mm/dd'
-	}); 
-	}); 
-	</script>
 </head>
  
 <body class="main_page">
@@ -41,16 +28,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						 <input type="text" name="search4" id="s4">
 						 <button onclick="search4()">查询管理者ID</button>
 						 <input type="text" name="search5" id="s5">
-						 <button onclick="search5()">查询进货ID</button><br>
-						<input  name="search6" id="s6" type="text" >--<input type="text" name="search6" id="s9" > 
-						 <button onclick="search6()">查询进货日期</button><br>
-						 <input type="text" name="search7" id="s7" value="0" 
-						 onfocus="javascript:if(this.value=='0')this.value='';">--<input type="text" name="search7" id="s8">
-						 <button onclick="search7()">查询进货数目</button>
+						 <button onclick="search5()">查询地区</button><br>
+						 <input type="text" name="search6" id="s6" value="0" 
+						 onfocus="javascript:if(this.value=='0')this.value='';">--
+						 <input type="text" name="search7" id="s7">
+						 <button onclick="search6()">查询总金额</button>
 					 </div>
     			</div>
     			<div class="panel panel_second">
-    			<jsp:include page="/purchase" flush="true" /></br>
+    			<!--<jsp:include page="/shops" flush="true" /></br>-->
         		</div>
         		</div>
     	</div>

@@ -24,21 +24,21 @@
 				</dl>
 				<dl class="nav_sec">
     					<dt class="staff">
-						<a class="index_page_uri" href="staffList.jsp">商店管理员</a>
+						<a class="index_page_uri" href="staffList">商店管理员</a>
     					</dt>
 				</dl>
     				<dl class="nav_sec">
 	    				<dt class="shop">
-						<a class="index_page_uri" href="shopList.jsp">商店管理</a>
+						<a class="index_page_uri" href="shopList">商店管理</a>
 					</dt>
 				</dl>
     				<dl class="nav_sec">
     					<dt class="info">
-						<a class="index_page_uri" href="goodsList.jsp">信息列表</a>
+						<a class="index_page_uri" href="/WEB-INF/content-man/goodsList.jsp">信息列表</a>
 					</dt>
-    					<dd class="goods"><a href="goodsList.jsp" style="padding-left:60px;">商品列表</a></dd>
-    					<dd class="sales"><a href="salesList.jsp" style="padding-left:60px;">销售情况</a></dd>
-    					<dd class="purchase"><a href="purchaseList.jsp" style="padding-left:60px;">进货列表</a></dd>
+    					<dd class="goods"><a href="goodsList" style="padding-left:60px;">商品列表</a></dd>
+    					<dd class="sales"><a href="salesList" style="padding-left:60px;">销售情况</a></dd>
+    					<dd class="purchase"><a href="purchaseList" style="padding-left:60px;">进货列表</a></dd>
     				</dl>
     			</nav>
     		</aside>
