@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -36,6 +37,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 </div>
     			</div>
     			<div class="panel panel_second">
+    			
+    			<s:iterator value="shop">
+    			</s:iterator>
+    			
+    			
+    			
+    			
     			<!--<jsp:include page="/shops" flush="true" /></br>-->
         		</div>
         		</div>
