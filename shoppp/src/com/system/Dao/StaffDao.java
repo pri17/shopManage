@@ -2,10 +2,11 @@ package com.system.Dao;
 
 import java.util.List;
 
+import com.basic.Dao.BasicDao;
 import com.system.model.Shop;
 import com.system.model.Staff;
 
-public interface StaffDao {
+public interface StaffDao extends BasicDao<Staff>{
 	//对Staff对象的所有操作
 	/**
 	* 按id查找staff

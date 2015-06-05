@@ -2,12 +2,13 @@ package com.system.Dao;
 
 import java.util.List;
 
+import com.basic.Dao.BasicDao;
 import com.system.model.*;
 
 
 
 
-public interface PurchaseDao {
+public interface PurchaseDao extends BasicDao<Purchase>{
 	//对Purchase对象的所有操作
 	/**
 	 * 查找指定商店的进货情况

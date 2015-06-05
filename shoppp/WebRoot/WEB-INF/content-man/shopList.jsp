@@ -37,14 +37,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 </div>
     			</div>
     			<div class="panel panel_second">
-    			
+    			<table>
+    			<th>商店Id</th>
+    			<th>商店名</th>
+    			<th>商店所在地区</th>
+    		<!-- 	<th>店主</th>
+    			<th>进货员</th>
+    			<th>售货员</th>
+    			<th>商店总金额</th> -->
     			<s:iterator value="shop">
+    				<tr>
+    				<td>${shop_id}</td>
+    				<td>${shop_name }</td>
+    				<td>${district }</td>
+    				</tr>
     			</s:iterator>
+    			</table>
     			
     			
-    			
-    			
-    			<!--<jsp:include page="/shops" flush="true" /></br>-->
         		</div>
         		</div>
     	</div>

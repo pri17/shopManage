@@ -2,9 +2,10 @@ package com.system.Dao;
 
 import java.util.List;
 
+import com.basic.Dao.BasicDao;
 import com.system.model.Shop;
 
-public interface ShopDao {
+public interface ShopDao extends BasicDao<Shop>{
 	//对Shop对象的所有操作
 	/**
 	* 按商店名查找商店（模糊）

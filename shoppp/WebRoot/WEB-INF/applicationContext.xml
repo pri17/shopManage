@@ -55,7 +55,19 @@
 			</value>
 		</property>
 	</bean>
-	
+	<!-- 定义业务逻辑组件模板,为之注入DAO组件 -->
+	<bean id="managerTemplate" abstract="true" lazy-init="true"
+		p:goodsDao-ref="goodsDao"
+		p:purDao-ref="purchaseDao"
+		p:saleDao-ref="saleDao"
+		p:shopDao-ref="shopDao"
+		p:staffDao-ref="staffDao"
+		p:typeDao-ref="typeDao"/>
+		
+
+	<bean id="shopManager"
+		class="com.system.service.impl.shopManagerImpl"
+		parent="managerTemplate"/>
 	
 	
 <!-- 配置hibernate局部事务管理器 -->	
@@ -71,33 +83,14 @@
 	</tx:attributes>
  </tx:advice>
  
+<aop:config>
+		<!-- 配置一个切入点，匹配skpPurchaseManager\skpGoodsManager\skpSaleManager
+			两个Bean的所有方法的执行 -->
+		<aop:pointcut id="leePointcut"
+			expression="bean(*Manager)"/>
+		<!-- 指定在leePointcut切入点应用txAdvice事务增强处理 -->
+		<aop:advisor advice-ref="txAdvice" 
+			pointcut-ref="leePointcut"/>
+	</aop:config>	
 
- 
- 
- 
-	<!--<bean id="PurchaseDAO" class="com.system.Dao.PurchaseDao">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="SaleDAO" class="com.system.Dao.SaleDao">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="ShopDAO" class="com.system.Dao.ShopDao">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="StaffDAO" class="com.system.Dao.StaffDao">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="TypeDAO" class="com.system.Dao.TypeDao">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>-->
 	</beans>
