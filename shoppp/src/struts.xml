@@ -11,20 +11,24 @@
 
     <package name="default" extends="struts-default">
     
-    <!-- 定义全局结果 -->
+    <!-- 定义全局结果 ,可以完成权限检查-->
 		<global-results>
 			<result name="login">/WEB-INF/content-man/login.jsp</result>
 		</global-results>
 		
+	<action name="main" class="com.system.actions.mainAction">
+		<result>index.jsp</result>
+	</action>	
+	
 	<!-- jsp中的基本action -->
+	<action name="shopList" class="com.system.actions.shopListAction">
+		<result>/WEB-INF/content-man/shopList.jsp</result>
+	</action>
 	<action name="staffList" class="com.system.actions.staffListAction">
 		<result>/WEB-INF/content-man/staffList.jsp</result>
 	</action>
 	<action name="goodsList" class="com.system.actions.goodsListAction">
 		<result>/WEB-INF/content-man/goodsList.jsp</result>
-	</action>
-	<action name="shopList" class="com.system.actions.shopListAction">
-		<result>/WEB-INF/content-man/shopList.jsp</result>
 	</action>
 	<action name="salesList" class="com.system.actions.salesListAction">
 		<result>/WEB-INF/content-man/salesList.jsp</result>

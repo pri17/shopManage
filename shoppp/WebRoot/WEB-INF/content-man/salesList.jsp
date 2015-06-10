@@ -9,11 +9,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<base href="<%=basePath%>">
 
 	<title>销售情况</title>
- 	<link rel="stylesheet" type="text/css" href="style/4.css">
- 	<link rel="stylesheet" type="tetx/css" href="style/jquery-ui.min.css">
- 	<script type="text/javascript" src="js/searchSales.js" charset="GB2312"></script>
- 	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
- 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="resc-man/style/4.css">
+ 	<link rel="stylesheet" type="tetx/css" href="resc-man/style/jquery-ui.min.css">
+ 	<script type="text/javascript" src="resc-man/js/searchSales.js" charset="GB2312"></script>
+ 	<script type="text/javascript" src="resc-man/js/jquery-1.3.2.min.js"></script>
+ 	<script type="text/javascript" src="resc-man/js/jquery-ui.min.js"></script>
  	
  	<script> 
 	$(document).ready(function() { 

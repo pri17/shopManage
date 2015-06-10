@@ -10,9 +10,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<base href="<%=basePath%>">
 
 	<title>商店列表</title>
- 	<link rel="stylesheet" type="text/css" href="style/2.css">
- 	<script type="text/javascript" src="js/searchShop.js" charset="GB2312"></script>
- 	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="resc-man/style/2.css">
+ 	<script type="text/javascript" src="resc-man/js/searchShop.js" charset="GB2312"></script>
+ 	<script type="text/javascript" src="resc-man/js/jquery-1.3.2.min.js"></script>
 </head>
  
 <body class="main_page">
@@ -47,9 +47,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			<th>商店总金额</th> -->
     			<s:iterator value="shop">
     				<tr>
-    				<td>${shop_id}</td>
-    				<td>${shop_name }</td>
-    				<td>${district }</td>
+    				<td>{shop.shop_id}</td>
+    				<td></td>
+    				<td></td>
     				</tr>
     			</s:iterator>
     			</table>

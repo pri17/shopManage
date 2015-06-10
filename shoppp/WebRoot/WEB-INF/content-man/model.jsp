@@ -3,7 +3,7 @@
 <header class="head">
 		<div class="head_container">
 			<a class="logo" href="../product/Top.aspx">
-				<img alt="商品信息管理系统" src="img/logo2.png">
+				<img alt="商品信息管理系统" src="resc-man/img/logo2.png">
 			</a>  
 		</div>
 	</header>
@@ -12,7 +12,7 @@
     		<aside class="page_aside" id="page_aside">
     			<div class="user_info">
 				<a href="" target="_blank">
-        				<img class="user_avatar" alt="staff" src="img/manager.jpg">
+        				<img class="user_avatar" alt="staff" src="resc-man/img/manager.jpg">
 				</a> 
         			<div class="info_mesaage">你好！<br><strong>manager</strong> </div>
     			</div>

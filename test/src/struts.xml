@@ -192,12 +192,5 @@
                 <param name="res">res</param>
             </result>
         </action>
-        
-        
-        <!-- manager的action配置 -->
-        <action name="manMain" class="org.manager.action.mainAction">
-        	<result >/WEB-INf/content_man/index.jsp
-        	</result>
-        </action>
     </package>
 </struts>

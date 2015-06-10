@@ -39,6 +39,7 @@ public class shopListAction extends ActionSupport implements RequestAware{
 		return SUCCESS;
 	}
 
+
 	@Override
 	public void setRequest(Map<String, Object> arg0) {
 		this.request=arg0;

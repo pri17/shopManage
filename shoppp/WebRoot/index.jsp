@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<base href="<%=basePath%>">
 
 	<title></title>
- 	<link rel="stylesheet" type="text/css" href="style/master.css">
+ 	<link rel="stylesheet" type="text/css" href="resc-man/style/master.css">
 </head>
  
 <body class="main_page">

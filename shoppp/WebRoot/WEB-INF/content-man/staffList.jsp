@@ -9,9 +9,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<base href="<%=basePath%>">
 
 	<title>商店管理员</title>
- 	<link rel="stylesheet" type="text/css" href="style/1.css">
- 	<script type="text/javascript" src="js/searchStaff.js" charset="GB2312"></script>
- 	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="resc-man/style/1.css">
+ 	<script type="text/javascript" src="resc-man/js/searchStaff.js" charset="GB2312"></script>
+ 	<script type="text/javascript" src="resc-man/js/jquery-1.3.2.min.js"></script>
 </head>
  
 <body class="main_page">
