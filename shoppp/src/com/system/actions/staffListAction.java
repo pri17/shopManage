@@ -1,5 +1,6 @@
 package com.system.actions;
 
-public class staffListAction {
 
+public class staffListAction {
+	
 }

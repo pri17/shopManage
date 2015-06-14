@@ -2,11 +2,16 @@ package com.system.service.impl;
 
 import java.util.List;
 
-import com.system.Dao.*;
-import com.system.model.Shop;
-import com.system.service.shopManager;
+import com.system.Dao.GoodsDao;
+import com.system.Dao.PurchaseDao;
+import com.system.Dao.SaleDao;
+import com.system.Dao.ShopDao;
+import com.system.Dao.StaffDao;
+import com.system.Dao.TypeDao;
+import com.system.model.*;
+import com.system.service.goodsManager;
 
-public class shopManagerImpl implements shopManager{
+public class goodsManagerImpl implements goodsManager{
 	private PurchaseDao purDao;
 	private ShopDao shopDao;
 	private GoodsDao goodsDao;
@@ -51,12 +56,23 @@ public class shopManagerImpl implements shopManager{
 		this.saleDao = saleDao;
 	}
 	
-	public List<Shop> getAll(){
-		return shopDao.findAll(com.system.model.Shop.class);
+	@Override
+	public List<Goods> getAll(){
+		return ( goodsDao).findAll(Goods.class);
 	}
 	@Override
-	public Shop getShop(int shopId) {
-		Shop shop= shopDao.get(Shop.class, shopId);
-		return shop;
+	public Goods getGoodsById(int goodsId){
+		Goods goods=(Goods) goodsDao.findGoodsById(goodsId);
+		return goods;
+	}
+	@Override
+	public List<Goods> getGoodsByname(String name){
+		List<Goods> goods=goodsDao.findByGoodsName(name);
+		return goods;
+	}
+	@Override
+	public List<Goods> getGoodsByType(String typeName){
+		List<Goods> goods=goodsDao.findGoodsByType(typeName);
+		return goods;
 	}
 }

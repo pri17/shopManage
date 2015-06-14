@@ -19,10 +19,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<script type="text/javascript">
+		var url="/start/index.jsp";
+		location.href=decodeURIComponent(url);
+	</script>
   </head>
   
   <body>
-    <jsp:forward page="/start/index.jsp" />
+    
   </body>
 </html>

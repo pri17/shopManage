@@ -37,23 +37,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 </div>
     			</div>
     			<div class="panel panel_second">
-    			<table>
-    			<th>商店Id</th>
-    			<th>商店名</th>
-    			<th>商店所在地区</th>
-    		<!-- 	<th>店主</th>
-    			<th>进货员</th>
-    			<th>售货员</th>
-    			<th>商店总金额</th> -->
-    			<s:iterator value="shop">
-    				<tr>
-    				<td>{shop.shop_id}</td>
-    				<td></td>
-    				<td></td>
-    				</tr>
-    			</s:iterator>
-    			</table>
-    			
+    		<div id="shoplist">
+    		<table>
+    				<thead>
+    					<th><span><strong>店名：</strong></span></th>
+    					<th><span><strong>店主：</strong></span></th>
+    					<th><span><strong>地址：</strong></span></th>
+    					<th><span><strong>金额：</strong></span></th>		
+    				</thead>
+    		<tbody>
+    		<s:iterator value="shops">
+				<tr><td><s:property value="shop_name"/></td>
+				<td><s:property value="staff.staffName"/></td>
+				<td><s:property value="district"/></td>
+				<td><s:property value="price"/></td></tr>
+			</s:iterator>
+			</tbody>
+			</table>
+    		</div>	
     			
         		</div>
         		</div>

@@ -5,43 +5,60 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.RequestAware;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.system.actions.basic.shopBaseAction;
 import com.system.model.Shop;
 import com.system.service.shopManager;
 import com.system.service.impl.shopManagerImpl;
 
-public class shopListAction extends ActionSupport implements RequestAware{
-	private List<Shop> shop;
-	private shopManagerImpl sm;
-	private Map<String ,Object> request;
-	public Map<String, Object> getRequest() {
-		return request;
+public class shopListAction  extends shopBaseAction{
+	private List<Shop> shops;
+	private Shop shop;
+	private int level;//等级
+	
+	shopListAction(){
+		setLevel();
 	}
-
-	public shopManager getSm() {
-		return sm;
-	}
-
-	public void setSm(shopManagerImpl sm) {
-		this.sm = sm;
-	}
-
-	public List<Shop> getShop() {
+	
+	
+	public Shop getShop() {
 		return shop;
 	}
 
-	public void setShop(List<Shop> shop) {
+	public void setShop(Shop shop) {
 		this.shop = shop;
 	}
+	public List<Shop> getShops() {
+		return shops;
+	}
+
+	public void setShops(List<Shop> shops) {
+		this.shops = shops;
+	}
 	
+	//获取当前等级
+	public void setLevel(){
+		ActionContext ctx = ActionContext.getContext();
+		if(ctx.getSession().get("level") == null)
+			level = -1;
+		else
+			level = (int)ctx.getSession().get("level");
+	}
+	public int getLevel(){
+		return this.level;
+	}
 	public String execute() throws Exception{
-		request.put("shops", sm.getAll());
+		if(level != 1)//不是管理员的都要重新登陆
+			return LOGIN;
+		shops=sm.getAll();
+		///ActionContext.getContext().getSession().put("shops", shops);
+		return SUCCESS;
+	}
+	public String getShopById(){
+		int id=(int)ActionContext.getContext().getSession().get("shop_id");
+		shop=sm.getShop(id);
 		return SUCCESS;
 	}
 
-
-	@Override
-	public void setRequest(Map<String, Object> arg0) {
-		this.request=arg0;
-	}
 }

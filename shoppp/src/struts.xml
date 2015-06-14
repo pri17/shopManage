@@ -13,7 +13,7 @@
     
     <!-- 定义全局结果 ,可以完成权限检查-->
 		<global-results>
-			<result name="login">/WEB-INF/content-man/login.jsp</result>
+			<result name="login">login.jsp</result>
 		</global-results>
 		
 	<action name="main" class="com.system.actions.mainAction">

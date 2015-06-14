@@ -13,13 +13,13 @@ public interface StaffDao extends BasicDao<Staff>{
 	* @param int id staff的id
 	* @return 员工信息
 	*/
-	List<Staff> findBySatffById(int id);
+	List<Staff> findSatffById(int id);
 	/**
 	* 按staff名字查找staff（模糊）
 	* @param String name satff名字
 	* @return 员工信息
 	*/
-	List<Staff> findByStaffByName(String name);
+	List<Staff> findStaffByName(String name);
 	/**
 	* 按权限等级查找staff（模糊）
 	* @param int level staff的level

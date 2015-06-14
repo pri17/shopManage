@@ -11,12 +11,12 @@ import com.system.model.Staff;
 public class StaffDaoHibernate extends BasicDaoHibernate<Staff> implements StaffDao{
 
 	@Override
-	public List<Staff> findBySatffById(int id) {
+	public List<Staff> findSatffById(int id) {
 		return (find("from Staff where staffId="+id));
 	}
 
 	@Override
-	public List<Staff> findByStaffByName(String name) {
+	public List<Staff> findStaffByName(String name) {
 		return (find("from Staff where staffName like %"+name+"%"));
 	}
 
